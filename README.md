@@ -2,7 +2,7 @@
 
 A browser-based contact manager for saving and organizing contacts on your device. It includes search, VCF import and export, QR codes, light and dark themes, and installable Progressive Web App (PWA) support.
 
-**Live demo:** [Open Contact Manager](#) <!-- Replace # with the deployed app URL. -->
+**Live demo:** [Open Contact Manager](https://contractra.netlify.app/) <!-- Replace # with the deployed app URL. -->
 
 ## Why I built this
 
