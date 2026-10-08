@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f6f9" />
+    <meta name="description" content="Save and manage your contacts privately in your browser." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>Contact Manager</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <script src="/theme.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <script src="/pwa.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 4.18 2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.06 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z"/></symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m18 6-12 12M6 6l12 12"/></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0 4 4m-4-4L8 8"/><path d="M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+      <symbol id="icon-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zm5 0h2m-7 5h2m3-2v4m2-4h-2"/></symbol>
+      <symbol id="icon-edit" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l4.5-1 10.7-10.7a2.12 2.12 0 0 0-3-3L5.5 16 4 20Z"/><path d="M13.5 6.5 17.5 10.5"/></symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6m4-6v6M5 7l1 14h12l1-14M9 7V4h6v3"/></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="./" aria-label="Contact Manager home">
+            <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="#icon-users" /></svg></span>
+            <span class="brand-copy">
+              <span class="brand-title">Contact Manager</span>
+              <span class="brand-subtitle">Your people, all in one place</span>
+            </span>
+          </a>
+          <div class="header-actions">
+            <button id="install-app-button" class="install-button" type="button" aria-label="Install Contact Manager" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg>
+              <span>Install now</span>
+            </button>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+              <svg class="icon" aria-hidden="true"><use href="#icon-moon" /></svg>
+              <span id="theme-toggle-label">Dark mode</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="container main-content">
+        <section class="toolbar" aria-label="Contact tools">
+          <label class="search-field">
+            <svg class="icon" aria-hidden="true"><use href="#icon-search" /></svg>
+            <span class="visually-hidden">Search contacts</span>
+            <input id="search-input" type="search" placeholder="Search contacts..." autocomplete="off" />
+            <kbd class="search-shortcut" aria-hidden="true">Ctrl K</kbd>
+          </label>
+          <button class="button button-primary add-contact-button" type="button" data-open-dialog aria-label="Add contact">
+            <svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg>
+            <span>Add contact</span>
+          </button>
+          <div class="contact-file-actions" aria-label="Import or export contacts">
+            <button id="import-contacts-button" class="button button-secondary file-action-button" type="button" aria-label="Import contacts from VCF">
+              <svg class="icon" aria-hidden="true"><use href="#icon-upload" /></svg>
+              <span>Import</span>
+            </button>
+            <button id="export-contacts-button" class="button button-secondary file-action-button" type="button" aria-label="Export contacts to VCF">
+              <svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg>
+              <span>Export</span>
+            </button>
+          </div>
+          <input id="import-contacts-file" class="visually-hidden" type="file" accept=".vcf,text/vcard,text/x-vcard" tabindex="-1" aria-label="Choose a VCF file to import" />
+        </section>
+        <section id="import-progress" class="import-progress" aria-label="Contact import progress" hidden>
+          <div class="import-progress-heading">
+            <strong id="import-progress-title">Importing contacts</strong>
+            <span id="import-progress-percent">0%</span>
+          </div>
+          <progress id="import-progress-bar" max="100" value="0" aria-label="Import progress"></progress>
+          <p id="import-progress-detail" aria-live="polite">Preparing to import...</p>
+        </section>
+        <div class="list-heading">
+          <h1 id="list-title">Your contacts</h1>
+          <p id="contact-count" class="contact-count" aria-live="polite"></p>
+        </div>
+
+        <section id="contacts-grid" class="contacts-grid" aria-labelledby="list-title" aria-live="polite"></section>
+        <div id="contacts-pagination" class="list-pagination" hidden>
+          <button id="previous-contacts" class="button button-secondary" type="button">Previous</button>
+          <span id="contacts-page-status" class="pagination-status" aria-live="polite"></span>
+          <button id="next-contacts" class="button button-secondary" type="button">Next</button>
+        </div>
+
+        <section id="empty-state" class="empty-state" aria-live="polite" hidden>
+          <div class="empty-icon" aria-hidden="true"><svg class="icon"><use href="#icon-users" /></svg></div>
+          <h2 id="empty-title">No contacts yet</h2>
+          <p id="empty-description">Add your first contact to get started.</p>
+          <button id="empty-action" class="button button-primary" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg>
+            <span>Add contact</span>
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="dialog-title">
+      <form id="contact-form" class="contact-form">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">CONTACT DETAILS</p>
+            <h2 id="dialog-title">Add contact</h2>
+          </div>
+          <button id="close-dialog" class="icon-button" type="button" aria-label="Close dialog">
+            <svg class="icon" aria-hidden="true"><use href="#icon-close" /></svg>
+          </button>
+        </div>
+
+        <input id="contact-id" name="id" type="hidden" />
+        <label class="form-field" for="contact-name">
+          <span class="form-label form-label-name"><svg class="icon" aria-hidden="true"><use href="#icon-user" /></svg><span>Name <span class="required-mark" aria-hidden="true">*</span></span></span>
+          <input id="contact-name" name="name" type="text" placeholder="e.g. Jordan Lee" maxlength="100" required autocomplete="name" />
+        </label>
+        <div class="form-row">
+          <label class="form-field" for="contact-phone">
+            <span class="form-label form-label-phone"><svg class="icon" aria-hidden="true"><use href="#icon-phone" /></svg><span>Phone</span></span>
+            <input id="contact-phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" maxlength="40" autocomplete="tel" />
+          </label>
+          <label class="form-field" for="contact-email">
+            <span class="form-label form-label-email"><svg class="icon" aria-hidden="true"><use href="#icon-mail" /></svg><span>Email</span></span>
+            <input id="contact-email" name="email" type="email" placeholder="jordan@example.com" maxlength="120" autocomplete="email" />
+          </label>
+        </div>
+        <label class="form-field" for="contact-address">
+          <span class="form-label form-label-address"><svg class="icon" aria-hidden="true"><use href="#icon-pin" /></svg><span>Address</span></span>
+          <textarea id="contact-address" name="address" rows="3" placeholder="Street, city, country" maxlength="300" autocomplete="street-address"></textarea>
+        </label>
+
+        <div class="dialog-actions">
+          <button id="cancel-dialog" class="button button-secondary" type="button">Cancel</button>
+          <button class="button button-primary" type="submit">Save contact</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="delete-contact-dialog" class="contact-dialog" aria-labelledby="delete-contact-title" aria-describedby="delete-contact-copy">
+      <div class="contact-form delete-form">
+        <div class="dialog-header">
+          <div class="delete-title-group">
+            <span class="delete-warning-icon" aria-hidden="true"><svg class="icon"><use href="#icon-trash" /></svg></span>
+            <div>
+              <p class="eyebrow">DELETE CONTACT</p>
+              <h2 id="delete-contact-title">Delete contact?</h2>
+            </div>
+          </div>
+          <button id="close-delete-dialog" class="icon-button" type="button" aria-label="Close delete confirmation">
+            <svg class="icon" aria-hidden="true"><use href="#icon-close" /></svg>
+          </button>
+        </div>
+        <p id="delete-contact-copy" class="delete-confirm-copy">Are you sure you want to delete <strong id="delete-contact-name">this contact</strong>? This action cannot be undone.</p>
+        <div class="dialog-actions">
+          <button id="cancel-delete-contact" class="button button-secondary" type="button">Cancel</button>
+          <button id="confirm-delete-contact" class="button button-danger" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-trash" /></svg><span>Delete contact</span></button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="export-dialog" class="contact-dialog" aria-labelledby="export-dialog-title">
+      <div class="contact-form export-form">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">VCF CONTACT FILE</p>
+            <h2 id="export-dialog-title">Export contacts</h2>
+          </div>
+          <button id="close-export-dialog" class="icon-button" type="button" aria-label="Close export dialog">
+            <svg class="icon" aria-hidden="true"><use href="#icon-close" /></svg>
+          </button>
+        </div>
+        <p class="export-help">Choose the contacts you want to include in your .vcf file.</p>
+        <label class="select-all-row" for="select-all-contacts">
+          <input id="select-all-contacts" type="checkbox" />
+          <span>Select all contacts</span>
+        </label>
+        <label class="export-search-field">
+          <svg class="icon" aria-hidden="true"><use href="#icon-search" /></svg>
+          <span class="visually-hidden">Search contacts to export</span>
+          <input id="export-search-input" type="search" placeholder="Find a contact..." autocomplete="off" />
+        </label>
+        <div id="export-contact-list" class="export-contact-list" aria-label="Contacts to export"></div>
+        <div id="export-pagination" class="list-pagination export-pagination" hidden>
+          <button id="export-previous" class="button button-secondary" type="button">Previous</button>
+          <span id="export-page-status" class="pagination-status" aria-live="polite"></span>
+          <button id="export-next" class="button button-secondary" type="button">Next</button>
+        </div>
+        <p id="export-selection-count" class="export-selection-count" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button id="cancel-export-dialog" class="button button-secondary" type="button">Cancel</button>
+          <button id="download-selected-contacts" class="button button-primary" type="button" disabled>Export selected</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="qr-dialog" class="contact-dialog" aria-labelledby="qr-dialog-title">
+      <div class="contact-form qr-form">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">SHARE CONTACT</p>
+            <h2 id="qr-dialog-title">Contact QR code</h2>
+          </div>
+          <button id="close-qr-dialog" class="icon-button" type="button" aria-label="Close QR code">
+            <svg class="icon" aria-hidden="true"><use href="#icon-close" /></svg>
+          </button>
+        </div>
+        <div class="qr-preview">
+          <img id="contact-qr-image" alt="" hidden />
+          <p id="qr-status" role="status">Preparing QR code…</p>
+        </div>
+        <p class="qr-help">Scan with a phone to add this contact.</p>
+        <div class="dialog-actions">
+          <button id="download-qr-contact" class="button button-secondary" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg>
+            <span>Download .vcf</span>
+          </button>
+          <button id="done-qr-dialog" class="button button-primary" type="button">Done</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="install-help-dialog" class="contact-dialog" aria-labelledby="install-help-title">
+      <div class="contact-form">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">INSTALL ON IPHONE OR IPAD</p>
+            <h2 id="install-help-title">Add to Home Screen</h2>
+          </div>
+          <button id="close-install-help" class="icon-button" type="button" aria-label="Close install instructions">
+            <svg class="icon" aria-hidden="true"><use href="#icon-close" /></svg>
+          </button>
+        </div>
+        <p class="install-help-copy">In Safari, tap the Share button, choose <strong>Add to Home Screen</strong>, then tap <strong>Add</strong>.</p>
+        <div class="dialog-actions">
+          <button id="done-install-help" class="button button-primary" type="button">Got it</button>
+        </div>
+      </div>
+    </dialog>
+    <div id="action-toast" class="action-toast" data-variant="success" role="status" aria-live="polite" aria-atomic="true" hidden>
+      <span class="action-toast-icon" aria-hidden="true"></span>
+      <span id="action-toast-message"></span>
+    </div>
+  </body>
+</html>

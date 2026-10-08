@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title description">
+  <title id="title">Contact list screenshot placeholder</title>
+  <desc id="description">A placeholder panel to replace with a screenshot of the contact list.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6f5f6" />
+      <stop offset="1" stop-color="#edf1f8" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="28" fill="url(#background)" />
+  <rect x="70" y="60" width="1140" height="600" rx="20" fill="#fff" stroke="#d5e0e8" stroke-width="3" />
+  <rect x="70" y="60" width="1140" height="88" rx="20" fill="#f7fafc" />
+  <path d="M70 128h1140" stroke="#d5e0e8" stroke-width="3" />
+  <circle cx="122" cy="104" r="20" fill="#d8f1f2" />
+  <rect x="160" y="91" width="245" height="14" rx="7" fill="#9aabba" />
+  <rect x="160" y="113" width="155" height="9" rx="4.5" fill="#d2dce5" />
+  <rect x="116" y="180" width="730" height="44" rx="10" fill="#f4f7fa" />
+  <rect x="878" y="180" width="248" height="44" rx="10" fill="#e4f5f6" />
+  <rect x="116" y="260" width="322" height="226" rx="16" fill="#f8fafc" stroke="#d5e0e8" stroke-width="2" />
+  <rect x="478" y="260" width="322" height="226" rx="16" fill="#f8fafc" stroke="#d5e0e8" stroke-width="2" />
+  <rect x="840" y="260" width="322" height="226" rx="16" fill="#f8fafc" stroke="#d5e0e8" stroke-width="2" />
+  <g fill="#d8f1f2">
+    <circle cx="162" cy="310" r="22" /><circle cx="524" cy="310" r="22" /><circle cx="886" cy="310" r="22" />
+  </g>
+  <g fill="#a8bac8">
+    <rect x="198" y="298" width="140" height="12" rx="6" /><rect x="198" y="318" width="86" height="8" rx="4" />
+    <rect x="560" y="298" width="140" height="12" rx="6" /><rect x="560" y="318" width="86" height="8" rx="4" />
+    <rect x="922" y="298" width="140" height="12" rx="6" /><rect x="922" y="318" width="86" height="8" rx="4" />
+  </g>
+  <text x="640" y="555" fill="#536879" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">Contact list screenshot placeholder</text>
+  <text x="640" y="588" fill="#7b8c99" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">Replace this image with a screenshot of the app</text>
+</svg>

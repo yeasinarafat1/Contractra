@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" role="img" aria-labelledby="title description">
+  <title id="title">Mobile layout screenshot placeholder</title>
+  <desc id="description">A placeholder panel to replace with a mobile screenshot of Contact Manager.</desc>
+  <rect width="390" height="844" rx="38" fill="#eaf1f5" />
+  <rect x="18" y="18" width="354" height="808" rx="30" fill="#fff" stroke="#cbd8e2" stroke-width="3" />
+  <rect x="135" y="31" width="120" height="10" rx="5" fill="#d5dfe7" />
+  <circle cx="55" cy="91" r="19" fill="#d8f1f2" />
+  <rect x="84" y="81" width="176" height="12" rx="6" fill="#8296a6" />
+  <rect x="84" y="101" width="126" height="8" rx="4" fill="#d2dce5" />
+  <rect x="38" y="143" width="314" height="42" rx="10" fill="#f4f7fa" />
+  <rect x="38" y="207" width="314" height="200" rx="16" fill="#f8fafc" stroke="#d5e0e8" stroke-width="2" />
+  <circle cx="75" cy="250" r="20" fill="#d8f1f2" />
+  <rect x="106" y="240" width="135" height="11" rx="5.5" fill="#9aabba" />
+  <rect x="106" y="259" width="82" height="8" rx="4" fill="#d2dce5" />
+  <rect x="62" y="295" width="242" height="1" fill="#e4eaf0" />
+  <rect x="62" y="316" width="224" height="8" rx="4" fill="#d5dfe7" />
+  <rect x="62" y="339" width="198" height="8" rx="4" fill="#d5dfe7" />
+  <rect x="62" y="362" width="214" height="8" rx="4" fill="#d5dfe7" />
+  <text x="195" y="482" fill="#536879" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Mobile screenshot placeholder</text>
+  <text x="195" y="508" fill="#7b8c99" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">Replace with a mobile app screenshot</text>
+  <rect x="38" y="550" width="314" height="200" rx="16" fill="#f8fafc" stroke="#d5e0e8" stroke-width="2" />
+  <rect x="62" y="584" width="158" height="10" rx="5" fill="#9aabba" />
+  <rect x="62" y="618" width="242" height="8" rx="4" fill="#d5dfe7" />
+  <rect x="62" y="641" width="204" height="8" rx="4" fill="#d5dfe7" />
+</svg>

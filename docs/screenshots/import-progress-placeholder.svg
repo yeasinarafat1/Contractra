@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title description">
+  <title id="title">Import progress screenshot placeholder</title>
+  <desc id="description">A placeholder panel to replace with a screenshot of VCF import progress.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e5f3f5" />
+      <stop offset="1" stop-color="#edf1f8" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="28" fill="url(#background)" />
+  <rect x="140" y="150" width="1000" height="420" rx="24" fill="#fff" stroke="#d5e0e8" stroke-width="3" />
+  <circle cx="220" cy="238" r="30" fill="#d8f1f2" />
+  <path d="M220 220v26m0 0 10-10m-10 10-10-10" fill="none" stroke="#168c9a" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+  <text x="275" y="235" fill="#34495b" font-family="Arial, sans-serif" font-size="28" font-weight="700">Importing contacts</text>
+  <text x="1060" y="235" fill="#168c9a" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="end">64%</text>
+  <rect x="200" y="292" width="880" height="18" rx="9" fill="#e7edf2" />
+  <rect x="200" y="292" width="565" height="18" rx="9" fill="#168c9a" />
+  <text x="200" y="358" fill="#7b8c99" font-family="Arial, sans-serif" font-size="19">Saving contacts: 6,400 of 10,000</text>
+  <rect x="200" y="404" width="880" height="1" fill="#e4eaf0" />
+  <text x="640" y="487" fill="#536879" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">Import progress screenshot placeholder</text>
+  <text x="640" y="520" fill="#7b8c99" font-family="Arial, sans-serif" font-size="17" text-anchor="middle">Replace this image with a screenshot of the importer</text>
+</svg>
